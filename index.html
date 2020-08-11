@@ -10,30 +10,30 @@
     <title>To-do list</title>
 </head>
 <body class="body">
-    <main>
+    <main class="container">
         <header>
             <h1>To-do list</h1>
         </header>
-        <section>
-            <h2>Add a new task</h2>
-            <div>
-                <form>
-                    <input type="text">
-                    <button>Add task</button>
+        <section class="section">
+            <h2 class="section__header">Add a new task</h2>
+            <div class="section__body">
+                <form class="form">
+                    <input class="form__input" type="text">
+                    <button class="form__button">Add task</button>
                 </form>
             </div>
         </section>
-        <section>
-            <h2>To-do list</h2>
-            <div>
-                <ul>
-                    <li>
-                        <button>
-                            <span></span>
+        <section class="section">
+            <h2 class="section__header">To-do list</h2>
+            <div class="section__body">
+                <ul class="tasks">
+                    <li class="tasks__item">
+                        <button class="tasks__button">
+                            <span class="tasks__icon"></span>
                         </button>
-                        <span></span>
-                        <button>
-                            <span></span>
+                        <span class="tasks__content"></span>
+                        <button class="tasks__button">
+                            <span class="tasks__icon"></span>
                         </button>
                     </li>
                 </ul>
