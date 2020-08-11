@@ -4,6 +4,12 @@
     grid-gap: 15px;
 }
 
+@media (max-width: 500px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+}
+
 .form__input {
     padding: 10px;
     border: 1px solid #ccc;
