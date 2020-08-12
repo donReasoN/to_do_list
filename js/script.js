@@ -10,6 +10,21 @@
         },
     ];
 
+    const addNewTask = () => {
+        
+        const newTask = document.querySelector('.js-newTask');
+        const newTaskContent = newTask.value;
+
+        if(newTaskContent) {
+            tasksArray.push({
+                content: newTaskContent,
+            });  
+        } else {
+            return null
+        }
+        render();
+    }
+
     const render = () => {
         let stringElement = "";
         
@@ -33,6 +48,9 @@
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+
+        addNewTask();
+        
     };
 
     const init = () => {
