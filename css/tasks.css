@@ -21,6 +21,10 @@
     border-radius: 5px;
 }
 
+.task-content--done {
+    text-decoration: line-through;
+}
+
 .tasks__button--done {
     background-color: rgb(119, 197, 126);
 }
