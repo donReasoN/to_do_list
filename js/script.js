@@ -52,7 +52,7 @@
             stringElement += `
             <li class="tasks__item">
                 <button class="tasks__button tasks__button--done js-done">
-                    <span class="tasks__icon fas fa-check"></span>
+                    <span class="tasks__icon ${task.done ? "fas fa-check" : ""}"></span>
                 </button>
 
                 <span class="tasks__content ${task.done ? "task-content--done" : ""}">${task.content}</span>
