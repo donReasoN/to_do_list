@@ -10,46 +10,46 @@
         },
     ];
 
-    const toogleTaskButton = () => {
+    const removeTask = (taskIndex) => {
+        tasksArray.splice(taskIndex, 1);
+        render();
+    }
+
+    const toogleTask = (taskIndex) => {
+        tasksArray[taskIndex].done = !tasksArray[taskIndex].done;
+        render();
+    }
+
+    const addTask = (newTaskContent) => {
+        tasksArray.push({content: newTaskContent});
+        render();
+    }
+
+    const bindToogleEvents = () => {
         const toogleButtons = document.querySelectorAll('.js-done');
+
         toogleButtons.forEach((toogleButton, taskIndex) => {
             toogleButton.addEventListener('click', () => {
-                tasksArray[taskIndex].done = !tasksArray[taskIndex].done;
-                render();
+                toogleTask(taskIndex);
             });
         });
     };
 
-    const removeTaskButton = () => {
+    const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll('.js-remove');
+
         removeButtons.forEach((removeButton, taskIndex) => {
             removeButton.addEventListener('click', () => {
-                tasksArray.splice(taskIndex, 1);
-                render();
+                removeTask(taskIndex);
             });
         });
     };
     
-    const addNewTask = () => {
-        
-        const newTask = document.querySelector('.js-newTask');
-        const newTaskContent = newTask.value;
-
-        if(newTaskContent) {
-            tasksArray.push({
-                content: newTaskContent,
-            });  
-        } else {
-            return null
-        };
-        render();
-    };
-
     const render = () => {
-        let stringElement = "";
+        let taskStringElement = "";
         
         for (const task of tasksArray) {
-            stringElement += `
+            taskStringElement += `
             <li class="tasks__item">
                 <button class="tasks__button tasks__button--done js-done">
                     <span class="tasks__icon ${task.done ? "fas fa-check" : ""}"></span>
@@ -63,17 +63,23 @@
             </li>
         `;
         };
-        document.querySelector('.js-tasks').innerHTML = stringElement;
+        document.querySelector('.js-tasks').innerHTML = taskStringElement;
 
-        removeTaskButton();
-        toogleTaskButton();
+        bindRemoveEvents();
+        bindToogleEvents();
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        addNewTask();
+        const newTask = document.querySelector('.js-newTask');
+        const newTaskContent = newTask.value.trim();
 
+        if(newTaskContent) {
+            addTask(newTaskContent);
+            newTask.value = '';
+        } 
+        newTaskContent.focus();
     };
 
     const init = () => {
