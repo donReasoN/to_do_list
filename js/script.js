@@ -50,7 +50,7 @@
         });
     };
     
-    const render = () => {
+    const renderTasks = () => {
         let taskStringElement = "";
         
         for (const task of tasksArray) {
@@ -69,6 +69,21 @@
         `;
         };
         document.querySelector('.js-tasks').innerHTML = taskStringElement;
+    }
+
+    const renderButtons = () => {
+        let buttonsStringElement = "";
+
+        buttonsStringElement += `
+            <button class="section__toogleHideTasks">Show completed</button>
+            <button class="section__toogleDoneTasks">Complete all</button>
+        `;
+        document.querySelector('.js-buttons').innerHTML = buttonsStringElement;
+    };
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
 
         bindRemoveEvents();
         bindToogleEvents();
