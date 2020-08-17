@@ -4,10 +4,45 @@
     box-shadow: 1px 3px 6px #aaa;
 }
 
+.section__container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    grid-gap: 15px;
+    padding-right: 15px;
+    border-bottom: 2px solid #eee;
+}
+
+@media(max-width: 500px) {
+    .section__container {
+        grid-template-columns: 1fr;
+        padding-right: 0;
+    }
+
+    .section__header-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+}
+
+.section__toogleHideTasks,
+.section__toogleDoneTasks {
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    color: #606060;
+}
+
 .section__header {
     padding: 20px;
     margin: 0;
-    border-bottom: 2px solid #eee;
+}
+
+@media(max-width: 500px) {
+    .section__header {
+        text-align: center;
+    }
 }
 
 .section__body {
