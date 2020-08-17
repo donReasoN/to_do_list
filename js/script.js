@@ -1,27 +1,32 @@
 {
-    const tasksArray = [
-        {
-            content: 'Example 1',
-            done: false,
-        },
-        {
-            content: 'Example 2',
-            done: true,
-        },
+    let tasksArray = [
+      
     ];
 
     const removeTask = (taskIndex) => {
-        tasksArray.splice(taskIndex, 1);
+        tasksArray = [
+            ...tasksArray.slice(0, taskIndex),
+            ...tasksArray.slice(taskIndex + 1),
+        ];
         render();
-    }
+    };
 
     const toogleTask = (taskIndex) => {
-        tasksArray[taskIndex].done = !tasksArray[taskIndex].done;
+        tasksArray = [
+            ...tasksArray.slice(0, taskIndex),
+            {...tasksArray[taskIndex],
+                done: !tasksArray[taskIndex].done,
+            },
+            ...tasksArray.slice(taskIndex + 1),
+        ];
         render();
     }
 
     const addTask = (newTaskContent) => {
-        tasksArray.push({content: newTaskContent});
+        tasksArray = [
+            ...tasksArray,
+            { content: newTaskContent},
+        ];
         render();
     }
 
