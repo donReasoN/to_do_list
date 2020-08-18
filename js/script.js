@@ -1,30 +1,28 @@
 {
-    let tasksArray = [
-      
-    ];
+    let tasks = [];
 
     const removeTask = (taskIndex) => {
-        tasksArray = [
-            ...tasksArray.slice(0, taskIndex),
-            ...tasksArray.slice(taskIndex + 1),
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1),
         ];
         render();
     };
 
     const toogleTask = (taskIndex) => {
-        tasksArray = [
-            ...tasksArray.slice(0, taskIndex),
-            {...tasksArray[taskIndex],
-                done: !tasksArray[taskIndex].done,
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            {...tasks[taskIndex],
+                done: !tasks[taskIndex].done,
             },
-            ...tasksArray.slice(taskIndex + 1),
+            ...tasks.slice(taskIndex + 1),
         ];
         render();
     }
 
     const addTask = (newTaskContent) => {
-        tasksArray = [
-            ...tasksArray,
+        tasks = [
+            ...tasks,
             { content: newTaskContent},
         ];
         render();
@@ -53,7 +51,7 @@
     const renderTasks = () => {
         let taskStringElement = "";
         
-        for (const task of tasksArray) {
+        for (const task of tasks) {
             taskStringElement += `
             <li class="tasks__item">
                 <button class="tasks__button tasks__button--done js-done">
@@ -99,7 +97,8 @@
             addTask(newTaskContent);
             newTask.value = '';
         } 
-        newTaskContent.focus();
+
+        newTask.focus();
     };
 
     const init = () => {
