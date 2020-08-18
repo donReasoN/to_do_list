@@ -19,6 +19,7 @@
 }
 
 .section__btn {
+    width: 150px;
     cursor: pointer;
     transition: .2s;
 }
@@ -26,6 +27,12 @@
 .section__btn:hover {
     background-color: #606060;
     color: #eee;
+}
+
+.section__btn:disabled {
+    background-color: transparent;
+    color: #606060;
+    border: none;
 }
 
 @media(max-width: 500px) {
