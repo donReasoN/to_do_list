@@ -23,3 +23,17 @@
     background-color: rgb(119, 197, 126);
     color: #fff;
 }
+
+.form__button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(119, 197, 126);
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.form__button:hover {
+    background-color: hsl(125, 40%, 68%);
+}
