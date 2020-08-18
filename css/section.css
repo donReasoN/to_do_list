@@ -26,8 +26,8 @@
     }
 }
 
-.section__toogleHideTasks,
-.section__toogleDoneTasks {
+.section__toggleHideTasks,
+.section__toggleDoneTasks {
     height: 40px;
     border: none;
     background-color: transparent;
