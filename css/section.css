@@ -19,7 +19,7 @@
         padding-right: 0;
     }
 
-    .section__header-buttons {
+    .section__buttons {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 10px;
