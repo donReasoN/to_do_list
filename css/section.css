@@ -8,15 +8,30 @@
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    grid-gap: 15px;
-    padding-right: 15px;
+    padding-right: 20px;
     border-bottom: 2px solid #eee;
+}
+
+.section__buttons {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+}
+
+.section__btn {
+    cursor: pointer;
+    transition: .2s;
+}
+
+.section__btn:hover {
+    background-color: #606060;
+    color: #eee;
 }
 
 @media(max-width: 500px) {
     .section__container {
         grid-template-columns: 1fr;
-        padding-right: 0;
+        padding: 20px;
     }
 
     .section__buttons {
@@ -29,7 +44,8 @@
 .section__toggleHideTasks,
 .section__toggleDoneTasks {
     height: 40px;
-    border: none;
+    border: 1px solid #606060;
+    border-radius: 5px;
     background-color: transparent;
     color: #606060;
 }
