@@ -15,11 +15,11 @@
 .section__buttons {
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 20px;
+    grid-gap: 10px;
 }
 
 .section__btn {
-    width: 150px;
+    width: 140px;
     cursor: pointer;
     transition: .2s;
 }
@@ -39,6 +39,9 @@
     .section__container {
         grid-template-columns: 1fr;
         padding: 20px;
+    }
+    .section__btn {
+        width: 100%;
     }
 
     .section__buttons {
