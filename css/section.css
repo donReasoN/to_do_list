@@ -12,24 +12,24 @@
     border-bottom: 2px solid #eee;
 }
 
-.section__buttons {
+.buttons {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 10px;
 }
 
-.section__btn {
+.button {
     width: 140px;
     cursor: pointer;
     transition: .2s;
 }
 
-.section__btn:hover {
+.button:hover {
     background-color: #606060;
     color: #eee;
 }
 
-.section__btn:disabled {
+.button:disabled {
     background-color: transparent;
     color: #606060;
     border: none;
@@ -40,19 +40,19 @@
         grid-template-columns: 1fr;
         padding: 20px;
     }
-    .section__btn {
+    .button {
         width: 100%;
     }
 
-    .section__buttons {
+    .buttons {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 10px;
     }
 }
 
-.section__toggleHideTasks,
-.section__toggleDoneTasks {
+.toggleHideTasks,
+.toggleDoneTasks {
     height: 40px;
     border: 1px solid #606060;
     border-radius: 5px;
